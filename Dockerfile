@@ -7,15 +7,14 @@ RUN python3 -m pip install RISE
 
 # Create notebook user
 ARG NB_USER=nagyd96
-RUN adduser $NBUSER
+RUN adduser $NB_USER
 
 # Create working directory
-ENV WORKDIR=/home/$NBUSER/workdir
+ENV WORKDIR=/home/$NB_USER/workdir
 RUN if [ ! -d $WORKDIR ]; then mkdir $WORKDIR; fi
 RUN chmod -R 777 /home
 
 # Run the notebook from workdir
 WORKDIR $WORKDIR
-USER $NBUSER
+USER $NB_USER
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser"]
-
