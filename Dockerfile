@@ -1,5 +1,5 @@
 FROM nagyd96/ubuntu:xenial-20191108
-FROM python:3.8.0
+FROM python:3.6.8 # Versions above this fail
 
 # Install Jupyter Notebook with RISE
 RUN python3 -m pip install --upgrade pip && python3 -m pip install jupyter
