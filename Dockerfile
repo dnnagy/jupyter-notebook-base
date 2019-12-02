@@ -35,8 +35,8 @@ USER $NB_USER
 
 # Run startup script
 COPY ./set_theme.sh /home/$NB_USER/
+RUN /bin/bash /home/$NB_USER/set_theme.sh
 
-# This is the same as startup.sh but in one single line
-# CMD set -x; if [[ -n $THEME ]]; then jt -t $THEME -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T -N; else jt -r; fi; cd $WORKDIR && jupyter notebook --ip=0.0.0.0 --no-browser
-CMD ["/bin/bash", "/home/$NB_USER/set_theme.sh"]
-ENTRYPOINT cd $WORKDIR && jupyter notebook --ip=0.0.0.0 --no-browser"
+# Run Jupyter notebook from Workdir
+RUN cd $WORKDIR
+ENTRYPOINT jupyter notebook --ip=0.0.0.0 --no-browser"
