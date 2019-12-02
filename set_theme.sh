@@ -7,7 +7,3 @@ else
 	echo "No theme specified, resetting jupyter theme."
   	jt -r
 fi
-
-echo "Running jupyter notebook..."
-cd $WORKDIR
-jupyter notebook --ip=0.0.0.0 --no-browser
