@@ -30,4 +30,7 @@ RUN chmod -R 777 /home
 # Run the notebook from workdir
 WORKDIR $WORKDIR
 USER $NB_USER
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser"]
+CMD if [[ -n $THEME ]]; then\
+jt -t $THEME -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T -N\
+fi\
+jupyter notebook --ip=0.0.0.0 --no-browser
