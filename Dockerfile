@@ -27,6 +27,12 @@ RUN adduser $NB_USER
 # Create working directory
 ENV WORKDIR=/home/$NB_USER/workdir
 RUN if [ ! -d $WORKDIR ]; then mkdir $WORKDIR; fi
+
+
+# Copy startup script
+COPY ./set_theme.sh /home/$NB_USER/
+
+# Fix permissions
 RUN chmod -R 777 /tmp
 RUN chmod -R 777 /home
 
@@ -34,9 +40,8 @@ RUN chmod -R 777 /home
 USER $NB_USER
 
 # Run startup script
-COPY ./set_theme.sh /home/$NB_USER/
-RUN /bin/bash /home/$NB_USER/set_theme.sh
+RUN /home/$NB_USER/set_theme.sh || echo "ERROR: set_theme.sh failed"
 
 # Run Jupyter notebook from Workdir
 RUN cd $WORKDIR
-ENTRYPOINT jupyter notebook --ip=0.0.0.0 --no-browser"
+ENTRYPOINT jupyter notebook --ip=0.0.0.0 --no-browser
