@@ -18,7 +18,7 @@ RUN python3 -m pip install scikit-learn==0.21.2
 RUN python3 -m pip install pandas==0.24.2
 
 # Create notebook user
-ARG NB_USER=nagyd96
+ENV NB_USER=nagyd96
 RUN adduser $NB_USER
 
 # Create working directory
