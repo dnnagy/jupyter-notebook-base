@@ -7,6 +7,9 @@ FROM python:3.6.8
 RUN python3 -m pip install --upgrade pip && python3 -m pip install jupyter
 RUN python3 -m pip install RISE
 
+# Install jupyterthemes
+RUN python3 -m pip install jupyterthemes==0.20.0
+
 # Install basic packages
 RUN python3 -m pip install matplotlib==3.1.1
 RUN python3 -m pip install numpy==1.16.4
