@@ -24,6 +24,7 @@ RUN adduser $NB_USER
 # Create working directory
 ENV WORKDIR=/home/$NB_USER/workdir
 RUN if [ ! -d $WORKDIR ]; then mkdir $WORKDIR; fi
+RUN chmod -R 777 /tmp
 RUN chmod -R 777 /home
 
 # Run the notebook from workdir
