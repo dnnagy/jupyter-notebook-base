@@ -1,4 +1,4 @@
-set -xe
+set -x
 if [[ -n $THEME ]]; then
 	echo "Setting theme $THEME."
 	# Set theme
