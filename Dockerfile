@@ -3,6 +3,9 @@ FROM nagyd96/ubuntu:xenial-20191108
 # Versions above this fail
 FROM python:3.6.8
 
+# Install nano
+RUN apt-get update && apt-get install -y nano
+
 # Install Jupyter Notebook with RISE
 RUN python3 -m pip install --upgrade pip && python3 -m pip install jupyter
 RUN python3 -m pip install RISE
