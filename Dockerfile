@@ -43,5 +43,4 @@ USER $NB_USER
 RUN /home/$NB_USER/set_theme.sh || echo "ERROR: set_theme.sh failed"
 
 # Run Jupyter notebook from Workdir
-RUN cd $WORKDIR
-ENTRYPOINT jupyter notebook --ip=0.0.0.0 --no-browser
+ENTRYPOINT cd $WORKDIR && jupyter notebook --ip=0.0.0.0 --no-browser
