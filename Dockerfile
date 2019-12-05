@@ -36,8 +36,9 @@ ENV MPL_RC_FILE_DARK=/home/$NB_USER/matplotlibrc_dark
 COPY ./set_theme.sh /home/$NB_USER/
 
 # Fix permissions
-RUN chmod -R 777 /tmp
-RUN chmod -R 777 /home
+RUN chown -R ${NB_USER}: /tmp && chmod -R u+rwx /tmp
+RUN chown -R ${NB_USER}: /home && chmod -R u+rwx /home
+RUN chown -R ${NB_USER}: /usr/local && chmod -R u+rwx /usr/local
 
 # Run as nagyd96
 USER $NB_USER
