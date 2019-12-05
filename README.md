@@ -15,3 +15,4 @@ docker run -it -p 8888:8888 \
 --mount type=bind,source="$(pwd)",target=/home/nagyd96/workdir nagyd96/jupyter-notebook-base:latest
 ```
 Available themes: [https://github.com/dunovank/jupyter-themes](https://github.com/dunovank/jupyter-themes)
+If You want to use dark theme in matplotlib, add `-e PLT_DARK_THEME=1` to the docker command
