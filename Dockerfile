@@ -28,6 +28,9 @@ RUN adduser $NB_USER
 ENV WORKDIR=/home/$NB_USER/workdir
 RUN if [ ! -d $WORKDIR ]; then mkdir $WORKDIR; fi
 
+# Setup matplotlibrc file for dark theme
+ENV MPL_RC_FILE_DARK=/home/$NB_USER/
+COPY ./matplotlibrc_dark MPL_RC_FILE_DARK
 
 # Copy startup script
 COPY ./set_theme.sh /home/$NB_USER/
