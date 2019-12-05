@@ -35,6 +35,9 @@ ENV MPL_RC_FILE_DARK=/home/$NB_USER/matplotlibrc_dark
 # Copy startup script
 COPY ./set_theme.sh /home/$NB_USER/
 
+# Copy notebook config script
+COPY ./init_notebook.sh /home/$NB_USER/
+
 # Fix permissions
 RUN chown -R ${NB_USER}: /tmp && chmod -R u+rwx /tmp
 RUN chown -R ${NB_USER}: /home && chmod -R u+rwx /home
@@ -43,8 +46,7 @@ RUN chown -R ${NB_USER}: /usr/local && chmod -R u+rwx /usr/local
 # Run as nagyd96
 USER $NB_USER
 
-# Run startup script
-RUN /home/$NB_USER/set_theme.sh || echo "ERROR: set_theme.sh failed"
-
 # Run Jupyter notebook from Workdir
-ENTRYPOINT cd $WORKDIR && jupyter notebook --ip=0.0.0.0 --no-browser
+ENTRYPOINT /home/${NB_USER}/init_notebook.sh || echo "ERROR: init_notebook.sh failed" && \
+/home/${NB_USER}/set_theme.sh || echo "ERROR: set_theme.sh failed" && \
+cd $WORKDIR && jupyter notebook --ip=0.0.0.0 --no-browser

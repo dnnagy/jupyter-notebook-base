@@ -291,7 +291,7 @@ text.color          : DBE1EA
 axes.facecolor      : 323A48   ## axes background color
 axes.edgecolor      : 92A2BD   ## axes edge color
 #axes.linewidth      : 0.8     ## edge linewidth
-#axes.grid           : False   ## display grid or not
+axes.grid           : True   ## display grid or not
 #axes.grid.axis      : both    ## which axis the grid should apply to
 #axes.grid.which     : major   ## gridlines at major, minor or both ticks
 #axes.titlesize      : large   ## fontsize of the axes title
@@ -404,7 +404,7 @@ ytick.color          : DBE1EA  ## color of the tick labels
 
 #### GRIDS
 grid.color       :   3F495A    ## grid color
-grid.linestyle   :   ':'         ## solid
+grid.linestyle   :   :         ## solid
 #grid.linewidth   :   0.8       ## in points
 #grid.alpha       :   1.0       ## transparency, between 0.0 and 1.0
 
