@@ -217,7 +217,7 @@
 ## text properties used by text.Text.  See
 ## http://matplotlib.org/api/artist_api.html#module-matplotlib.text for more
 ## information on text properties
-#text.color          : black
+text.color          : DBE1EA
 
 #### LaTeX customizations. See http://wiki.scipy.org/Cookbook/Matplotlib/UsingTex
 #text.usetex         : False  ## use latex for all text handling. The following fonts
@@ -288,8 +288,8 @@
 ## default face and edge color, default tick sizes,
 ## default fontsizes for ticklabels, and so on.  See
 ## http://matplotlib.org/api/axes_api.html#module-matplotlib.axes
-#axes.facecolor      : white   ## axes background color
-#axes.edgecolor      : black   ## axes edge color
+axes.facecolor      : 323A48   ## axes background color
+axes.edgecolor      : 92A2BD   ## axes edge color
 #axes.linewidth      : 0.8     ## edge linewidth
 #axes.grid           : False   ## display grid or not
 #axes.grid.axis      : both    ## which axis the grid should apply to
@@ -300,7 +300,7 @@
 #axes.labelsize      : medium  ## fontsize of the x any y labels
 #axes.labelpad       : 4.0     ## space between label and axis
 #axes.labelweight    : normal  ## weight of the x and y labels
-#axes.labelcolor     : black
+axes.labelcolor     : DBE1EA
 #axes.axisbelow      : line    ## draw axis gridlines and ticks below
                                ## patches (True); above patches but below
                                ## lines ('line'); or above all (False)
@@ -330,7 +330,7 @@
 #axes.unicode_minus  : True    ## use unicode for the minus symbol
                                ## rather than hyphen.  See
                                ## http://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
-#axes.prop_cycle    : cycler('color', ['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
+axes.prop_cycle    : cycler('color', ['21b6ed','e332d2','ffa600','63de47','d83152','faf20f','ad151c','09f19c','bf6308','8715eb','cc748b','991655'])
                       ## color cycle for plot lines  as list of string
                       ## colorspecs: single letter, long name, or web-style hex
 					  ## Note the use of string escapes here ('1f77b4', instead of 1f77b4)
@@ -372,7 +372,7 @@
 #xtick.minor.width    : 0.6    ## minor tick width in points
 #xtick.major.pad      : 3.5    ## distance to major tick label in points
 #xtick.minor.pad      : 3.4    ## distance to the minor tick label in points
-#xtick.color          : black  ## color of the tick labels
+xtick.color          : DBE1EA  ## color of the tick labels
 #xtick.labelsize      : medium ## fontsize of the tick labels
 #xtick.direction      : out    ## direction: in, out, or inout
 #xtick.minor.visible  : False  ## visibility of minor ticks on x-axis
@@ -392,7 +392,7 @@
 #ytick.minor.width    : 0.6    ## minor tick width in points
 #ytick.major.pad      : 3.5    ## distance to major tick label in points
 #ytick.minor.pad      : 3.4    ## distance to the minor tick label in points
-#ytick.color          : black  ## color of the tick labels
+ytick.color          : DBE1EA  ## color of the tick labels
 #ytick.labelsize      : medium ## fontsize of the tick labels
 #ytick.direction      : out    ## direction: in, out, or inout
 #ytick.minor.visible  : False  ## visibility of minor ticks on y-axis
@@ -403,8 +403,8 @@
 #ytick.alignment      : center_baseline ## alignment of yticks
 
 #### GRIDS
-#grid.color       :   b0b0b0    ## grid color
-#grid.linestyle   :   -         ## solid
+grid.color       :   3F495A    ## grid color
+grid.linestyle   :   ':'         ## solid
 #grid.linewidth   :   0.8       ## in points
 #grid.alpha       :   1.0       ## transparency, between 0.0 and 1.0
 
@@ -437,7 +437,7 @@
 #figure.titleweight : normal   ## weight of the figure title
 #figure.figsize   : 6.4, 4.8   ## figure size in inches
 #figure.dpi       : 100        ## figure dots per inch
-#figure.facecolor : white      ## figure facecolor
+figure.facecolor : 323A48      ## figure facecolor
 #figure.edgecolor : white      ## figure edgecolor
 #figure.frameon : True         ## enable figure frame
 #figure.max_open_warning : 20  ## The maximum number of figures to open through
@@ -527,7 +527,7 @@
 ## e.g., you may want a higher resolution, or to make the figure
 ## background white
 #savefig.dpi         : figure   ## figure dots per inch or 'figure'
-#savefig.facecolor   : white    ## figure facecolor when saving
+savefig.facecolor   : 323A48    ## figure facecolor when saving
 #savefig.edgecolor   : white    ## figure edgecolor when saving
 #savefig.format      : png      ## png, ps, pdf, svg
 #savefig.bbox        : standard ## 'tight' or 'standard'.
