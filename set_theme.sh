@@ -1,12 +1,15 @@
 #!/bin/bash
+echo "Running setup script..."
 if [[ -n ${THEME} ]]; then
-    echo "Changing to theme ${THEME}."
-    jt -t $THEME -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T -N
+    echo "Changing jupyter theme to ${THEME}."
+    jt -t ${THEME} -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T -N
 else
-    echo "Resetting theme."
+    echo "Resetting jupyter theme."
     jt -r
 fi
 if [[ ${PLT_DARK_THEME:-0} -eq 1 ]]; then
+    echo "Matplotlib dark theme required."
+    echo "Searching for dark matplotlibrc file..."
     MPL_RC_FILE=$(python -c "import matplotlib; print(matplotlib.matplotlib_fname())")
     # Create a backup
     cp MPL_RC_FILE /home/${NB_USER}/matplotlibrc.backup
