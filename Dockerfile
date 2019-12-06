@@ -15,10 +15,13 @@ RUN python3 -m pip install jupyterthemes==0.20.0
 
 # Install basic packages
 RUN python3 -m pip install matplotlib==3.1.1
+RUN python3 -m pip install networkx==2.4
 RUN python3 -m pip install numpy==1.16.4
+RUN python3 -m pip install pandas==0.24.2
 RUN python3 -m pip install scipy==1.3.0
 RUN python3 -m pip install scikit-learn==0.21.2
-RUN python3 -m pip install pandas==0.24.2
+RUN python3 -m pip install scikit-optimize==0.5.2
+RUN python3 -m pip install seaborn==0.9.0
 
 # Create notebook user
 ENV NB_USER=nagyd96
