@@ -9,9 +9,13 @@ RUN apt-get update && apt-get install -y nano
 # Install Jupyter Notebook with RISE
 RUN python3 -m pip install --upgrade pip
 
+# Colored outputs in bash
+ENV RED='\033[0;31m'
+ENV NC='\033[0m'
+
 # Install requirements from requirements.txt
 COPY requirements.txt /tmp/
-RUN cat /tmp/requirements.txt | xargs -n 1 pip install --force-reinstall || echo "pip install failed."
+RUN cat /tmp/requirements.txt | xargs -n 1 pip install --force-reinstall || echo -e "${RED}ERROR: pip install failed. See above.${NC}"
 
 # Create notebook user
 ENV NB_USER=nagyd96
@@ -41,6 +45,5 @@ RUN chown -R ${NB_USER}: /usr/local && chmod -R u+rwx /usr/local
 
 # Run Jupyter notebook via docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
-# backwards compat
-RUN ln -s /usr/local/bin/docker-entrypoint.sh /
-ENTRYPOINT ["docker-entrypoint.sh"]
+RUN chmod u+x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT /usr/local/bin/docker-entrypoint.sh
