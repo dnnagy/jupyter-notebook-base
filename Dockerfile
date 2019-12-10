@@ -46,10 +46,11 @@ RUN chown -R ${NB_USER}: /tmp && chmod -R u+rwx /tmp
 RUN chown -R ${NB_USER}: /home && chmod -R u+rwx /home
 RUN chown -R ${NB_USER}: /usr/local && chmod -R u+rwx /usr/local
 
-# Run as nagyd96
-USER $NB_USER
+# No more need to switch user since we are using docker-entrypoint.sh
+# USER $NB_USER
 
-# Run Jupyter notebook from Workdir
-ENTRYPOINT /home/${NB_USER}/init_notebook.sh || echo "ERROR: init_notebook.sh failed" && \
-/home/${NB_USER}/set_theme.sh || echo "ERROR: set_theme.sh failed" && \
-cd $WORKDIR && nohup sh -c "jupyter notebook --ip=0.0.0.0 --no-browser" > /home/$NB_USER/jupyter.log &
+# Run Jupyter notebook via docker-entrypoint.sh
+COPY docker-entrypoint.sh /usr/local/bin/
+# backwards compat
+RUN ln -s /usr/local/bin/docker-entrypoint.sh /
+ENTRYPOINT ["docker-entrypoint.sh"]
