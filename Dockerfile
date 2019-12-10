@@ -7,21 +7,11 @@ FROM python:3.6.8
 RUN apt-get update && apt-get install -y nano
 
 # Install Jupyter Notebook with RISE
-RUN python3 -m pip install --upgrade pip && python3 -m pip install jupyter
-RUN python3 -m pip install RISE
+RUN python3 -m pip install --upgrade pip
 
-# Install jupyterthemes
-RUN python3 -m pip install jupyterthemes==0.20.0
-
-# Install basic packages
-RUN python3 -m pip install matplotlib==3.1.1
-RUN python3 -m pip install networkx==2.4
-RUN python3 -m pip install numpy==1.16.4
-RUN python3 -m pip install pandas==0.24.2
-RUN python3 -m pip install scipy==1.3.0
-RUN python3 -m pip install scikit-learn==0.21.2
-RUN python3 -m pip install scikit-optimize==0.5.2
-RUN python3 -m pip install seaborn==0.9.0
+# Install requirements from requirements.txt
+COPY requirements.txt /tmp/
+RUN cat /tmp/requirements.txt | xargs -n 1 pip install --force-reinstall || echo "pip install failed."
 
 # Create notebook user
 ENV NB_USER=nagyd96
