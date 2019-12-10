@@ -52,4 +52,4 @@ USER $NB_USER
 # Run Jupyter notebook from Workdir
 ENTRYPOINT /home/${NB_USER}/init_notebook.sh || echo "ERROR: init_notebook.sh failed" && \
 /home/${NB_USER}/set_theme.sh || echo "ERROR: set_theme.sh failed" && \
-cd $WORKDIR && jupyter notebook --ip=0.0.0.0 --no-browser
+cd $WORKDIR && nohup sh -c "jupyter notebook --ip=0.0.0.0 --no-browser" > /home/$NB_USER/jupyter.log &
