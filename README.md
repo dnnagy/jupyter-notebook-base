@@ -1,6 +1,9 @@
 # jupyter-notebook-base
 Dockerfile for nagyd96/jupyter-notebook-base
 
+# TODO:
+Add explicit password protection, so we do not need to copy tokens
+
 # To run this notebook:
 ```bash
 docker pull nagyd96/jupyter-notebook-base
