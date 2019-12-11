@@ -4,7 +4,7 @@ FROM nagyd96/ubuntu:xenial-20191108
 FROM python:3.6.8
 
 # Install nano
-RUN apt-get update && apt-get install -y nano
+RUN apt-get update && apt-get install -y nano htop
 
 # Install Jupyter Notebook with RISE
 RUN python3 -m pip install --upgrade pip
