@@ -1,8 +1,3 @@
-/**
-  * The default password is 'notebook'.
-  * You can generate a password hash by running 
-  * python -c "from notebook.auth import passwd; print(passwd('my-password'))"
-  */
 {
   "NotebookApp": {
     "password": "sha1:cd11a6ce8f64:7ec0f3eda125e0553b10b77e903cc48c7027034c"

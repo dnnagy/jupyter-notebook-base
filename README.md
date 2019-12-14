@@ -19,3 +19,9 @@ docker run -it -p 8888:8888 \
 ```
 Available themes: [https://github.com/dunovank/jupyter-themes](https://github.com/dunovank/jupyter-themes)
 If You want to use dark theme in matplotlib, add `-e PLT_DARK_THEME=1` to the docker command
+
+# Change password
+The default password is 'notebook'. You can generate a password hash by running
+```bash
+python -c "from notebook.auth import passwd; print(passwd('my-password'))
+```
