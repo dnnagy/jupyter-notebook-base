@@ -1,10 +1,6 @@
 {
   "NotebookApp": {
-    "password": "sha1:cd11a6ce8f64:7ec0f3eda125e0553b10b77e903cc48c7027034c"
-  }
-  "CodeCell": {
-    "cm_config": {
-      "lineNumbers": true
-    } 
+    "password": "sha1:cd11a6ce8f64:7ec0f3eda125e0553b10b77e903cc48c7027034c",
+    "disable_check_xsrf": true
   }
 }
