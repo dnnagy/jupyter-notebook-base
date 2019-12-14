@@ -29,6 +29,9 @@ RUN if [ ! -d $WORKDIR ]; then mkdir $WORKDIR; fi
 COPY ./matplotlibrc_dark /home/$NB_USER/
 ENV MPL_RC_FILE_DARK=/home/$NB_USER/matplotlibrc_dark
 
+# Copy notebook settings
+COPY ./jupyter_notebook_config.py /home/$NB_USER/.jupyter
+
 # Copy startup script
 COPY ./set_theme.sh /home/$NB_USER/
 
