@@ -4,6 +4,11 @@ Dockerfile for nagyd96/jupyter-notebook-base
 # TODO:
 Add explicit password protection, so we do not need to copy tokens
 
+# Start a notebook one-liner:
+```bash
+docker run -it -p 8888:8888 -e THEME='onedork' -e PLT_DARK_THEME=1 --mount type=bind,source="$(pwd)",target=/home/nagyd96/workdir nagyd96/jupyter-notebook-base:latest
+```
+
 # To run this notebook:
 ```bash
 docker pull nagyd96/jupyter-notebook-base
