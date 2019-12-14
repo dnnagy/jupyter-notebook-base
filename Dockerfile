@@ -31,7 +31,7 @@ ENV MPL_RC_FILE_DARK=/home/$NB_USER/matplotlibrc_dark
 
 # Copy notebook config
 RUN mkdir -p /home/$NB_USER/.jupyter/
-COPY ./jupyter_notebook_config.py /home/$NB_USER/.jupyter/
+COPY ./jupyter_notebook_config.json /home/$NB_USER/.jupyter/
 
 # Copy startup script
 COPY ./set_theme.sh /home/$NB_USER/
