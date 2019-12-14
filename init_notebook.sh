@@ -19,9 +19,9 @@
 # echo ${NB_CONFIG} > ${JP_CONFIG_DIR}/custom/custom.js
 
 # Another solution since the above does not work
-NB_CONFIG_DIR=/home/${NB_USER}/.jupyter/nbconfig
-NB_CONFIG_JSON='{"CodeCell":{"cm_config":{"lineNumbers": true}}}'
-if [[ ! -d ${NB_CONFIG_DIR} ]]; then
-    mkdir -p ${NB_CONFIG_DIR}
-fi
-echo ${NB_CONFIG_JSON} > ${NB_CONFIG_DIR}/notebook.json
+# NB_CONFIG_DIR=/home/${NB_USER}/.jupyter/nbconfig
+# NB_CONFIG_JSON='{"CodeCell":{"cm_config":{"lineNumbers": true}}}'
+# if [[ ! -d ${NB_CONFIG_DIR} ]]; then
+#     mkdir -p ${NB_CONFIG_DIR}
+# fi
+# echo ${NB_CONFIG_JSON} > ${NB_CONFIG_DIR}/notebook.json
