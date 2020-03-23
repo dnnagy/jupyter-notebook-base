@@ -3,8 +3,17 @@ FROM nagyd96/ubuntu:xenial-20191108
 # Versions above this fail
 FROM python:3.6.8
 
-# Install nano
-RUN apt-get update && apt-get install -y nano htop
+# Install nano and htop
+RUN apt-get update && apt-get -yq dist-upgrade && \
+    apt-get install --no-install-recommends -yq \
+    nano htop && \
+    rm -rf /var/lib/apt/lists/*
+
+# install requirements for latex generation
+RUN apt-get update && apt-get -yq dist-upgrade && \
+    apt-get install --no-install-recommends -yq \
+    ghostscript imagemagick texlive-latex-base texlive-latex-extra && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Jupyter Notebook with RISE
 RUN python3 -m pip install --upgrade pip
