@@ -6,7 +6,7 @@ matplotlib==3.1.1
 networkx==2.4
 numpy==1.16.4
 pandas==1.0.1
-scipy==1.4.1
+scipy==1.10.0
 scikit-learn==0.22.2
 scikit-optimize==0.5.2
 tqdm==4.45.0
